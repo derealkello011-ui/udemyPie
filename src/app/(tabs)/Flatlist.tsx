@@ -1,4 +1,4 @@
-import { Text, FlatList, ListRenderItem, StatusBar, StyleSheet, useColorScheme } from 'react-native'
+import { Text, FlatList, ListRenderItem, StatusBar, StyleSheet } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 
