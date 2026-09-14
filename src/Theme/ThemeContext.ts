@@ -9,6 +9,7 @@ export interface ThemeColors {
     textSecondary: string;
     alert: string;
     border: string;
+    card: string;
 };
 
 export interface ThemeColorsType {
