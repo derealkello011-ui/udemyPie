@@ -1,28 +1,23 @@
 import { useState } from 'react';
-import { Button, FlatList, StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const ColorScreen = () => {
-  const [colors, setColors] = useState<string[]>([]);
-  console.log(colors);
+  const [color, setColor] = useState<string>('rgb(128, 128, 128)');
   
-  const updateColors = () => { 
-    setColors(colors => [...colors, randomRgb()]);
+  const updateColor = () => { 
+    setColor(randomRgb());
   };
 
   return (
-    // Added style={styles.screen} to ensure the safe area fills the view
     <SafeAreaView style={styles.screen}>
       <View style={styles.container}>
-        <FlatList
-          data={colors}
-          keyExtractor={(item, index) => `${item}-${index}`}
-          renderItem={({ item }) => (
-            <View style={[styles.colorTile, { backgroundColor: item }]} />
-          )}
-        />
+        <View style={[styles.colorTile, { backgroundColor: color }]} />
       </View>      
-      <Button title='Add a Color' onPress={updateColors} />
+      
+      <TouchableOpacity style={styles.customButton} onPress={updateColor}>
+        <Text style={styles.buttonText}>Change Color</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -39,22 +34,42 @@ export default ColorScreen;
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1, // Allows the screen to expand and hold the scrollable list
+    flex: 1,
+    justifyContent: 'center',
   },
   container: {
-    flex: 1, // Gives the list container space to expand and scroll
-    paddingVertical: 10,
+    paddingVertical: 30,
     borderColor: '#c1c0c0',
+    alignItems: 'center',
+    justifyContent: 'center',
     borderWidth: 2,
-    margin: 10,
+    margin: 20,
     borderRadius: 20,
-    overflow: 'hidden', // Keeps the color tiles inside the rounded borders
+    backgroundColor: '#ecb7313b'
   },
   colorTile: {
-    height: 100,
-    width: 200,
-    alignSelf: 'center', // Centers the tiles horizontally inside the list
-    marginVertical: 5,   // Adds spacing between the tiles
-    borderRadius: 8,
+    height: 150,
+    width: 250,
+    borderRadius: 30,
+  },
+  // Custom button layout styles go here:
+  customButton: {
+    backgroundColor: '#007AFF', // Solid blue color
+    paddingVertical: 14,
+    paddingHorizontal: 24,
+    marginHorizontal: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    shadowColor: '#000', // Optional drop shadow for iOS
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3, // Optional drop shadow for Android
+  },
+  // Custom text styles inside your button go here:
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
