@@ -1,7 +1,13 @@
+import { useState } from 'react'
 import { Button, StyleSheet, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 const ColorScreen = () => {
+  const [ colors, setColors ] = useState<string[]>( [] );
+  
+  const updateColors = () => { 
+    setColors[colors => [...colors, randomRgb()]]
+  };
 
   return (
     <SafeAreaView>

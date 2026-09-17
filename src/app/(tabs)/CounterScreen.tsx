@@ -11,14 +11,14 @@ const CounterScreen = () => {
             <View style={styles.container}>
                 <Text style={styles.buttonP}>Current Count: { counter }</Text>
                 <Button title='Increase' color={'#1af186'} onPress={() => {
-                    setCounter( counter++ );
+                    setCounter( counter => counter + 1 );
                 }} />
                 <Button title='Decrease' onPress={() => {
-                    if ( counter < 0 ) {
+                    if ( counter <= 0 ) {
                         alert( "Cannot go beyound 0" );
                         return;
                     }
-                    setCounter( counter-- );
+                    setCounter( counter => counter - 1 );
                 }} />
             </View>
 
