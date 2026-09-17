@@ -13,11 +13,18 @@ const ColorScreen = () => {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <View style={{
+        {/* <View style={{
           height: 100, width: 200,
           alignItems: 'center', justifyContent: 'center',
           backgroundColor: randomRgb(),
-        }} />
+        }} /> */}
+        
+        {colors.map((color, index) => (
+          <View
+            key={`${color}-${index}`}
+            style={[styles.colorTile, { backgroundColor: color }]}
+          />
+        ))}
       </View>      
         <Button title='Add a Color' onPress={updateColors} />
     </SafeAreaView>
@@ -43,5 +50,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     margin: 10,
     borderRadius: 20
-  }
+  },
+  colorTile: {
+    height: 100,
+    width: 200,
+    alignItems: 'center',
+    justifyContent: 'center',
+},
 })

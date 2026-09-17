@@ -72,7 +72,7 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="Buttons"
+        name="ColorScreen"
         options={{
           title: 'ColorScreen',
           tabBarIcon: ({ focused, color, size }) => (
