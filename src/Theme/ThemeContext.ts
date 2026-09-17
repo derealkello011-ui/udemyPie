@@ -10,6 +10,7 @@ export interface ThemeColors {
     alert: string;
     border: string;
     card: string;
+    tabMuted: string;
 };
 
 export interface ThemeColorsType {

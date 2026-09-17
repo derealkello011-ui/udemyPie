@@ -1,7 +1,7 @@
-import { Text, FlatList, ListRenderItem, StatusBar, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { LinearGradient } from 'expo-linear-gradient';
 import { useTheme } from '@/Theme/useTheme';
+import { LinearGradient } from 'expo-linear-gradient';
+import { FlatList, ListRenderItem, StatusBar, StyleSheet, Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface DataItems {
   id: string;
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     borderRadius: 14,
     borderWidth: 1,
-    // Subtle shadow for depth
+    // // Subtle shadow for depth
     elevation: 2,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },

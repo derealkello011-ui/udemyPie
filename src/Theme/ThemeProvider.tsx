@@ -1,6 +1,6 @@
+import { type ReactNode } from "react";
 import { useColorScheme } from "react-native";
 import { ThemeColors, ThemeContext } from "./ThemeContext";
-import { type ReactNode } from "react";
 
 const darkColors: ThemeColors = {
     background: '#1a1a2e',
@@ -11,6 +11,8 @@ const darkColors: ThemeColors = {
     textSecondary: '#a0a0b0',
     alert: '#ff5252',
     border: 'rgba(255, 255, 255, 0.1)',
+    card: '#fca634',
+    tabMuted: '#fff'
 };
 
 const lightColors: ThemeColors = {
@@ -22,6 +24,8 @@ const lightColors: ThemeColors = {
     textSecondary: '#61708a',
     alert: '#d9363e',
     border: 'rgba(23, 32, 51, 0.12)',
+    card: '#069582',
+    tabMuted: '#a9a4a4'
 };
 
 export const ThemeProvider = ( { children }: { children: ReactNode } ) => {
