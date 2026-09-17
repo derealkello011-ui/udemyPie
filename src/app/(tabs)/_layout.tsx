@@ -74,7 +74,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="Buttons"
         options={{
-          title: 'Buttons',
+          title: 'ColorScreen',
           tabBarIcon: ({ focused, color, size }) => (
             <TabIcon name={focused ? "cube-sharp" : "cube-outline"} color={color} focused={focused}/>
           ),
