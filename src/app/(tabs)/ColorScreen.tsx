@@ -9,6 +9,10 @@ const ColorScreen = () => {
     setColor(randomRgb());
   };
 
+  // const changeToSquareScreen = () => (
+  //   <Redirect href='/screens/SquareScreens' />
+  // );
+
   return (
     <SafeAreaView style={styles.screen}>
       <View style={styles.container}>
@@ -18,6 +22,14 @@ const ColorScreen = () => {
       <TouchableOpacity style={styles.customButton} onPress={updateColor}>
         <Text style={styles.buttonText}>Change Color</Text>
       </TouchableOpacity>
+
+      {/* <View style={styles.screen}>
+        <TouchableOpacity style={styles.customButton} onPress={changeToSquareScreen}>
+          <Text style={styles.buttonText}> Square Screen</Text>
+        </TouchableOpacity>
+      </View> */}
+      
+      
     </SafeAreaView>
   );
 };
@@ -65,6 +77,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 3, // Optional drop shadow for Android
+    
   },
   // Custom text styles inside your button go here:
   buttonText: {
