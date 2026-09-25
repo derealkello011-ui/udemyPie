@@ -10,6 +10,9 @@ export default function RootLayout() {
             headerShown : false,
           }}>
           <Stack.Screen name="(tabs)" />
+          <Stack.Screen
+            name="screens/TextScreen"
+          />
         </Stack>
       </SafeAreaProvider>
     </ThemeProvider>
