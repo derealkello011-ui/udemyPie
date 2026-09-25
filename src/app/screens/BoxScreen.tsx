@@ -1,6 +1,6 @@
 import { useTheme } from '@/Theme/useTheme';
 import { Stack } from 'expo-router';
-import { ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Platform, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
 
 const BoxScreen = () => {
    const { colors } = useTheme();
@@ -9,17 +9,21 @@ const BoxScreen = () => {
       <ScrollView style={[ { backgroundColor: colors.background } ]}>
           <Stack.Screen
               options={{
-                    headerShown: true,
+                    headerShown: Platform.OS === 'ios' ? true : false,
                     title: 'Box Screen',
                     headerBackTitle: 'Back',
                 }}
       />
           <View style={styles.container} >
-              <Text style={[styles.textOneStyle, {color: colors.text}]}>Child One</Text> 
-              <Text style={[styles.textTwoStyle, {color: colors.text}]}>Child Two</Text> 
-              <Text style={[styles.textThreeStyle, {color: colors.text}]}>Child Three</Text> 
+              <Text style={[styles.textOneStyle, {color: colors.text, backgroundColor: colors.surface}]}>Child One</Text> 
+              <Text style={[styles.textTwoStyle, {color: colors.text, backgroundColor: colors.surface}]}>Child Two</Text> 
+              <Text style={[styles.textThreeStyle, {color: colors.text, backgroundColor: colors.surface}]}>Child Three</Text> 
           </View>
-          <StatusBar barStyle={'default'}/>
+          {
+              Platform.OS === 'ios'
+                  ? <StatusBar barStyle={'default'} />
+                  : null
+          }
       </ScrollView>
   )
 }
@@ -46,6 +50,7 @@ const styles = StyleSheet.create({
         margin: 5,
         borderRadius: 10,
         flex: 2,
+        position: 'fixed'
     },
     textTwoStyle: {
         borderWidth: 2,
