@@ -2,13 +2,13 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 const ColorCounterScreen = (
     {
-        color, onIncrease, onDecrease
+        color, onIncrease, onDecrease, colorValue
     }: {
-        color:string, onIncrease: VoidFunction, onDecrease: VoidFunction
+        color:string, onIncrease: VoidFunction, onDecrease: VoidFunction, colorValue:number
     } ) => {
   return (
     <View style={styles.container}> 
-          <Text style={styles.header}>{color}</Text>
+          <Text style={styles.header}>{color} - { colorValue}</Text>
           <TouchableOpacity style={styles.customBtn} onPress={() => onIncrease()}>
               <Text style={styles.innerText}>Increase {color}</Text>
           </TouchableOpacity>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         // alignSelf: 'flex-start',
     },
     customBtn: {
-        backgroundColor: '#433df9',
+        backgroundColor: '#e46565',
         borderRadius: 12,
         padding: 10,
         marginBottom: 4,
