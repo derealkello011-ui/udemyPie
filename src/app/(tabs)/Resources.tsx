@@ -11,6 +11,9 @@ const ResourcesScreen = () => {
         <TouchableOpacity style={styles.customBtn1} onPress={() => router.push('/screens/TextScreen')}>
           <Text style={styles.touchableText}>Text Screen</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.customBtn1} onPress={() => router.push('/screens/BoxScreen')}>
+          <Text style={styles.touchableText}>Box Screen</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   )

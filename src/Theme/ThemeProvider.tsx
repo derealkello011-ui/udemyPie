@@ -12,7 +12,8 @@ const darkColors: ThemeColors = {
     alert: '#ff5252',
     border: 'rgba(255, 255, 255, 0.1)',
     card: '#fca634',
-    tabMuted: '#fff'
+    tabMuted: '#fff',
+    success: '#04c408'
 };
 
 const lightColors: ThemeColors = {
@@ -25,7 +26,8 @@ const lightColors: ThemeColors = {
     alert: '#d9363e',
     border: 'rgba(23, 32, 51, 0.12)',
     card: '#069582',
-    tabMuted: '#a9a4a4'
+    tabMuted: '#a9a4a4',
+    success: '#ffd000'
 };
 
 export const ThemeProvider = ( { children }: { children: ReactNode } ) => {

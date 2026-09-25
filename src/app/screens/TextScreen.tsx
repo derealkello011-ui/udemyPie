@@ -11,19 +11,19 @@ const TextScreen = () => {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <Stack.Screen
-        options={{
-          headerShown: true,
-          title: 'Text Screen',
-          headerBackTitle: 'Back',
-        }}
+              options={{
+                    headerShown: true,
+                    title: 'Text Screen',
+                    headerBackTitle: 'Back',
+                }}
       />
       <TextInput
         style={[
           styles.input,
           {
-            color: colors.text,
+            color: isDark? colors.textSecondary : colors.text,
             borderColor: isDark ? 'rgba(255, 255, 255, 0.2)' : '#000',
-            backgroundColor: colors.card,
+            backgroundColor: colors.tabMuted,
           },
         ]}
         placeholder="Enter your text here..."
@@ -31,11 +31,16 @@ const TextScreen = () => {
         autoCapitalize="none"
         autoCorrect={false}
         value={textInput}
-        onChangeText={setTextInput} // Fixed: Directly updates state with the typed string
+        onChangeText={newVal => setTextInput(newVal)} // Fixed: Directly updates state with the typed string
       />
-      <Text style={[styles.inputDisplay, { color: colors.text }]}>
-        You typed: {textInput}
-      </Text>
+          {textInput.length >= 5
+              ? <Text style={[ styles.inputDisplay, {color: colors.success }]}> 
+                  NOTE: Your password is strong
+              </Text>
+              : <Text style={[ styles.inputDisplay, { color: colors.alert } ]}>
+                  NOTE: Your password must be a minimum of 5 letters </Text>
+          } 
+          
     </View>
   );
 };

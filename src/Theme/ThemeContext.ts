@@ -11,6 +11,7 @@ export interface ThemeColors {
     border: string;
     card: string;
     tabMuted: string;
+    success: string;
 };
 
 export interface ThemeColorsType {

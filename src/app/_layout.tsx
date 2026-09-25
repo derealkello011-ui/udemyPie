@@ -13,6 +13,9 @@ export default function RootLayout() {
           <Stack.Screen
             name="screens/TextScreen"
           />
+          <Stack.Screen
+            name="screens/BoxScreen"
+          />
         </Stack>
       </SafeAreaProvider>
     </ThemeProvider>
